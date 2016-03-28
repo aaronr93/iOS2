@@ -13,4 +13,10 @@ class StudentDirectoryItem: NSObject {
     var image: String?
     var city: String?
     var state: String?
+    var id: String?
+    
+    init(id: String){
+        self.id = id
+        self.image = "http://glance.gcc.edu/student_fullres/\(id).jpg"
+    }
 }

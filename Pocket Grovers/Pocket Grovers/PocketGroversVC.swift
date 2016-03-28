@@ -15,12 +15,27 @@ class PocketGroversVC: UIViewController {
     @IBOutlet weak var homeImage: UIImageView!
     @IBOutlet weak var awayName: UILabel!
     @IBOutlet weak var awayImage: UIImageView!
+    let player1 = StudentDirectoryItem(id: "452071")
+    let player2 = StudentDirectoryItem(id: "453298")
     
     override func viewDidLoad() {
         super.viewDidLoad()
         console.font = UIFont(name: "PokemonGB", size: 18)
         homeName.font = UIFont(name: "PokemonGB", size: 18)
         awayName.font = UIFont(name: "PokemonGB", size: 18)
+        
+        
+        //load player images
+        if let url = NSURL(string: player1.image!) {
+            if let data = NSData(contentsOfURL: url) {
+                homeImage.image = UIImage(data: data)
+            }        
+        }
+        if let url = NSURL(string: player2.image!) {
+            if let data = NSData(contentsOfURL: url) {
+                awayImage.image = UIImage(data: data)
+            }
+        }
         // Do any additional setup after loading the view.
     }
 
