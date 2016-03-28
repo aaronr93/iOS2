@@ -18,6 +18,8 @@
 		36B92BAC1C9F331000E29A3B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 36B92BAB1C9F331000E29A3B /* Assets.xcassets */; };
 		36B92BAF1C9F331000E29A3B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 36B92BAD1C9F331000E29A3B /* LaunchScreen.storyboard */; };
 		9BACC3C71CA9C03C006B8B09 /* Pokemon GB.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9BACC3C61CA9C03C006B8B09 /* Pokemon GB.ttf */; };
+		9BACC3C91CA9CC99006B8B09 /* ImageDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BACC3C81CA9CC99006B8B09 /* ImageDownloader.swift */; };
+		9BACC3CF1CA9E5D6006B8B09 /* WelcomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BACC3CE1CA9E5D6006B8B09 /* WelcomeVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +36,8 @@
 		36B92BAE1C9F331000E29A3B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		36B92BB01C9F331000E29A3B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9BACC3C61CA9C03C006B8B09 /* Pokemon GB.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pokemon GB.ttf"; sourceTree = "<group>"; };
+		9BACC3C81CA9CC99006B8B09 /* ImageDownloader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageDownloader.swift; sourceTree = "<group>"; };
+		9BACC3CE1CA9E5D6006B8B09 /* WelcomeVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomeVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +57,7 @@
 				3631039F1CA0958800536DE4 /* StudentDirectoryItem.swift */,
 				363103A31CA0966500536DE4 /* Tweet.swift */,
 				363103A51CA0968F00536DE4 /* PocketGrover.swift */,
+				9BACC3C81CA9CC99006B8B09 /* ImageDownloader.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -72,6 +77,7 @@
 				363103981CA08F6300536DE4 /* PocketGroversVC.swift */,
 				36B92BA81C9F331000E29A3B /* Main.storyboard */,
 				36B92BAD1C9F331000E29A3B /* LaunchScreen.storyboard */,
+				9BACC3CE1CA9E5D6006B8B09 /* WelcomeVC.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -180,9 +186,11 @@
 			files = (
 				36B92BA51C9F331000E29A3B /* AppDelegate.swift in Sources */,
 				363103A01CA0958800536DE4 /* StudentDirectoryItem.swift in Sources */,
+				9BACC3C91CA9CC99006B8B09 /* ImageDownloader.swift in Sources */,
 				363103AA1CA0990900536DE4 /* UserTweets.swift in Sources */,
 				363103A61CA0968F00536DE4 /* PocketGrover.swift in Sources */,
 				363103AC1CA0993700536DE4 /* DirectoryInformation.swift in Sources */,
+				9BACC3CF1CA9E5D6006B8B09 /* WelcomeVC.swift in Sources */,
 				363103991CA08F6300536DE4 /* PocketGroversVC.swift in Sources */,
 				363103A41CA0966500536DE4 /* Tweet.swift in Sources */,
 			);

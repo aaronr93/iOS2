@@ -7,6 +7,11 @@
 //
 
 import UIKit
+import Social
+import Accounts
+
+
+
 
 class PocketGroversVC: UIViewController {
 
@@ -15,27 +20,24 @@ class PocketGroversVC: UIViewController {
     @IBOutlet weak var homeImage: UIImageView!
     @IBOutlet weak var awayName: UILabel!
     @IBOutlet weak var awayImage: UIImageView!
-    let player1 = StudentDirectoryItem(id: "452071")
-    let player2 = StudentDirectoryItem(id: "453298")
+
+    var player1 = StudentDirectoryItem(id: "452071")
+    var player2 = StudentDirectoryItem(id: "453298")
+    let queue = NSOperationQueue()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         console.font = UIFont(name: "PokemonGB", size: 18)
-        homeName.font = UIFont(name: "PokemonGB", size: 18)
-        awayName.font = UIFont(name: "PokemonGB", size: 18)
+        homeName.font = UIFont(name: "PokemonGB", size: 14)
+        awayName.font = UIFont(name: "PokemonGB", size: 14)
         
+        //download images in the background
+        getImages()
         
-        //load player images
-        if let url = NSURL(string: player1.image!) {
-            if let data = NSData(contentsOfURL: url) {
-                homeImage.image = UIImage(data: data)
-            }        
-        }
-        if let url = NSURL(string: player2.image!) {
-            if let data = NSData(contentsOfURL: url) {
-                awayImage.image = UIImage(data: data)
-            }
-        }
+        //set the names
+        homeName.text = player1.name!.componentsSeparatedByString(" ")[0]
+        awayName.text = player2.name!.componentsSeparatedByString(" ")[0]
+        
         // Do any additional setup after loading the view.
     }
 
@@ -44,15 +46,27 @@ class PocketGroversVC: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    //load images in the background
+    func getImages(){
+        let op = imageDownloader(url: player1.image!)
+        op.completionBlock = {
+            NSOperationQueue.mainQueue().addOperationWithBlock({
+                if(!op.cancelled){
+                    self.homeImage.image = op.image
+                }
+            })
+        }
+        queue.addOperation(op)
+        
+        let op2 = imageDownloader(url: player2.image!)
+        op2.completionBlock = {
+            NSOperationQueue.mainQueue().addOperationWithBlock({
+                if(!op2.cancelled){
+                    self.awayImage.image = op2.image
+                }
+            })
+        }
+        queue.addOperation(op2)
     }
-    */
 
 }

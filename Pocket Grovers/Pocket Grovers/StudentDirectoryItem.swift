@@ -16,7 +16,22 @@ class StudentDirectoryItem: NSObject {
     var id: String?
     
     init(id: String){
+        print("ID: \(id)")
         self.id = id
         self.image = "http://glance.gcc.edu/student_fullres/\(id).jpg"
+        
+        
+        let glanceURL = NSURL(string: "http://glance.gcc.edu/student_pages/\(id).php")
+        var html = NSString()
+        do {
+            html = try NSString(contentsOfURL: glanceURL!, encoding: NSUTF8StringEncoding)
+        } catch{print(error)}
+        
+        //split the html into lines - inspired by http://stackoverflow.com/questions/32021712/how-to-split-a-string-by-new-lines-in-swift
+        let newlineChars = NSCharacterSet.newlineCharacterSet()
+        let index = (html as String).startIndex.advancedBy(16)
+        let lines = (html as String).utf16.split { newlineChars.characterIsMember($0) }.flatMap(String.init)
+        self.name = lines[44].substringFromIndex(index).componentsSeparatedByString("<")[0]
+        
     }
 }
