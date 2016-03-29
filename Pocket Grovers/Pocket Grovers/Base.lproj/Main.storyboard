@@ -34,13 +34,13 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Player 1 ID: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JXI-Zy-An3">
                                 <rect key="frame" x="155" y="251" width="89" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Player 2 ID:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Deg-BM-YOQ">
                                 <rect key="frame" x="157" y="289" width="87" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JvT-AN-csB">
@@ -101,10 +101,10 @@
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jYP-YV-4yI">
-                                <rect key="frame" x="272" y="89" width="150" height="62"/>
+                                <rect key="frame" x="178" y="89" width="244" height="62"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="62" id="h5e-zQ-Qpv"/>
-                                    <constraint firstAttribute="width" constant="150" id="lxk-x1-e8f"/>
+                                    <constraint firstAttribute="width" constant="244" id="lxk-x1-e8f"/>
                                 </constraints>
                                 <attributedString key="attributedText">
                                     <fragment content="Away">
@@ -120,10 +120,10 @@
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Y6X-er-Mxi">
                                 <rect key="frame" x="0.0" y="443" width="311" height="157"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" usesAttributedText="YES" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ESl-wn-Sma">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ESl-wn-Sma">
                                         <rect key="frame" x="0.0" y="-2" width="311" height="151"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="303" id="Fhi-od-rCs"/>
+                                            <constraint firstAttribute="width" constant="311" id="Fhi-od-rCs"/>
                                             <constraint firstAttribute="height" constant="151" id="zXg-A0-v1z"/>
                                         </constraints>
                                         <attributedString key="attributedText">
@@ -142,7 +142,7 @@
                                     <constraint firstItem="ESl-wn-Sma" firstAttribute="bottom" secondItem="Y6X-er-Mxi" secondAttribute="bottomMargin" id="FjG-Fw-eqh"/>
                                     <constraint firstAttribute="trailing" secondItem="ESl-wn-Sma" secondAttribute="trailing" id="Tef-Qg-YaV"/>
                                     <constraint firstItem="ESl-wn-Sma" firstAttribute="top" secondItem="Y6X-er-Mxi" secondAttribute="top" constant="-2" id="jPI-xE-WNA"/>
-                                    <constraint firstItem="ESl-wn-Sma" firstAttribute="leading" secondItem="Y6X-er-Mxi" secondAttribute="leadingMargin" id="vLd-p2-oV2"/>
+                                    <constraint firstItem="ESl-wn-Sma" firstAttribute="leading" secondItem="Y6X-er-Mxi" secondAttribute="leadingMargin" constant="-8" id="vLd-p2-oV2"/>
                                 </constraints>
                             </scrollView>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="KiH-pk-cVD">
@@ -169,10 +169,10 @@
                                 </cells>
                             </collectionView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EQs-H1-sdP">
-                                <rect key="frame" x="178" y="310" width="150" height="49"/>
+                                <rect key="frame" x="178" y="310" width="244" height="49"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="49" id="dEq-O7-OGE"/>
-                                    <constraint firstAttribute="width" constant="150" id="u7F-bo-l15"/>
+                                    <constraint firstAttribute="width" constant="244" id="u7F-bo-l15"/>
                                 </constraints>
                                 <attributedString key="attributedText">
                                     <fragment content="Home">

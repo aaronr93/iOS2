@@ -19,12 +19,12 @@ class WelcomeVC: UIViewController {
         
         if let p1 = player1TextField.text{
             if(p1 != "" ){
-                dest.player1 = StudentDirectoryItem(id: p1)
+                dest.player1Student = StudentDirectoryItem(id: p1)
             }
         }
         if let p2 = player2TextField.text{
             if(p2 != "") {
-                dest.player2 = StudentDirectoryItem(id: p2)
+                dest.player2Student = StudentDirectoryItem(id: p2)
             }
         }
         
