@@ -101,17 +101,17 @@
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jYP-YV-4yI">
-                                <rect key="frame" x="178" y="89" width="244" height="62"/>
+                                <rect key="frame" x="20" y="89" width="402" height="62"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="62" id="h5e-zQ-Qpv"/>
-                                    <constraint firstAttribute="width" constant="244" id="lxk-x1-e8f"/>
+                                    <constraint firstAttribute="width" constant="402" id="lxk-x1-e8f"/>
                                 </constraints>
                                 <attributedString key="attributedText">
                                     <fragment content="Away">
                                         <attributes>
                                             <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <font key="NSFont" metaFont="system" size="36"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="right" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
                                         </attributes>
                                     </fragment>
                                 </attributedString>
@@ -169,41 +169,50 @@
                                 </cells>
                             </collectionView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EQs-H1-sdP">
-                                <rect key="frame" x="178" y="310" width="244" height="49"/>
+                                <rect key="frame" x="186" y="310" width="394" height="49"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="49" id="dEq-O7-OGE"/>
-                                    <constraint firstAttribute="width" constant="244" id="u7F-bo-l15"/>
+                                    <constraint firstAttribute="height" constant="49" id="rdm-Tw-k6Z"/>
                                 </constraints>
                                 <attributedString key="attributedText">
                                     <fragment content="Home">
                                         <attributes>
                                             <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <font key="NSFont" metaFont="system" size="36"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
                                         </attributes>
                                     </fragment>
                                 </attributedString>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="q2f-M9-dBo">
+                                <rect key="frame" x="252" y="20" width="97" height="30"/>
+                                <state key="normal" title="TEST ATTACK"/>
+                                <connections>
+                                    <action selector="testObserver" destination="tkq-Py-LJs" eventType="touchUpInside" id="Ctc-Kc-pB9"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="KiH-pk-cVD" firstAttribute="bottom" secondItem="M8v-vT-7nX" secondAttribute="top" id="4Qe-w9-Pdp"/>
                             <constraint firstItem="Y6X-er-Mxi" firstAttribute="top" secondItem="CkH-dQ-TGP" secondAttribute="bottom" constant="8" symbolic="YES" id="5oH-Gg-rJu"/>
                             <constraint firstItem="JEZ-10-A7H" firstAttribute="trailing" secondItem="CIX-ch-QMv" secondAttribute="trailingMargin" id="9YR-jD-KQx"/>
+                            <constraint firstItem="q2f-M9-dBo" firstAttribute="centerX" secondItem="CIX-ch-QMv" secondAttribute="centerX" id="An0-R4-xdQ"/>
                             <constraint firstItem="CkH-dQ-TGP" firstAttribute="leading" secondItem="CIX-ch-QMv" secondAttribute="leadingMargin" id="C1o-Pv-pJc"/>
                             <constraint firstAttribute="trailing" secondItem="KiH-pk-cVD" secondAttribute="trailing" id="D4O-zb-ySb"/>
                             <constraint firstItem="Y6X-er-Mxi" firstAttribute="leading" secondItem="CIX-ch-QMv" secondAttribute="leading" id="N4w-yX-ml2"/>
-                            <constraint firstItem="KiH-pk-cVD" firstAttribute="top" secondItem="EQs-H1-sdP" secondAttribute="bottom" constant="84" id="NNp-zg-IVV"/>
+                            <constraint firstItem="KiH-pk-cVD" firstAttribute="top" secondItem="EQs-H1-sdP" secondAttribute="bottom" constant="84" id="Ovk-qG-ng2"/>
                             <constraint firstItem="jYP-YV-4yI" firstAttribute="centerY" secondItem="JEZ-10-A7H" secondAttribute="centerY" id="PaC-7k-ZQQ"/>
                             <constraint firstItem="jYP-YV-4yI" firstAttribute="top" secondItem="wI5-hg-nyP" secondAttribute="bottom" constant="69" id="atR-dN-Zss"/>
                             <constraint firstItem="KiH-pk-cVD" firstAttribute="leading" secondItem="Y6X-er-Mxi" secondAttribute="trailing" constant="8" symbolic="YES" id="dxW-tU-J9K"/>
                             <constraint firstItem="JEZ-10-A7H" firstAttribute="leading" secondItem="jYP-YV-4yI" secondAttribute="trailing" constant="8" symbolic="YES" id="hBF-fc-cvd"/>
-                            <constraint firstItem="CkH-dQ-TGP" firstAttribute="centerY" secondItem="EQs-H1-sdP" secondAttribute="centerY" id="igh-Ir-NgH"/>
+                            <constraint firstItem="q2f-M9-dBo" firstAttribute="top" secondItem="JEZ-10-A7H" secondAttribute="top" id="kVD-9U-LoB"/>
+                            <constraint firstItem="EQs-H1-sdP" firstAttribute="leading" secondItem="CkH-dQ-TGP" secondAttribute="trailing" constant="16" id="kZw-fu-eGT"/>
                             <constraint firstItem="JEZ-10-A7H" firstAttribute="top" secondItem="wI5-hg-nyP" secondAttribute="bottom" id="n0C-yP-TVW"/>
+                            <constraint firstItem="EQs-H1-sdP" firstAttribute="trailing" secondItem="JEZ-10-A7H" secondAttribute="trailing" id="nW6-QD-WEK"/>
+                            <constraint firstItem="EQs-H1-sdP" firstAttribute="centerY" secondItem="CkH-dQ-TGP" secondAttribute="centerY" id="phb-fH-1IV"/>
                             <constraint firstItem="Y6X-er-Mxi" firstAttribute="bottom" secondItem="M8v-vT-7nX" secondAttribute="top" id="pmm-Sv-uod"/>
                             <constraint firstItem="KiH-pk-cVD" firstAttribute="top" secondItem="Y6X-er-Mxi" secondAttribute="top" id="rvL-wQ-ieb"/>
-                            <constraint firstItem="EQs-H1-sdP" firstAttribute="leading" secondItem="CkH-dQ-TGP" secondAttribute="trailing" constant="8" symbolic="YES" id="u42-XM-q4D"/>
                             <constraint firstItem="CkH-dQ-TGP" firstAttribute="top" secondItem="wI5-hg-nyP" secondAttribute="bottom" constant="215" id="whZ-As-jRE"/>
                         </constraints>
                     </view>

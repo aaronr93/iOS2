@@ -17,7 +17,7 @@ enum State {
     case Confused
 }
 
-let adjectives = ["Li'l", "Big ass", "Hobo", "Blind", "Hipster", "Nerdy", "Bad Shit", "Poison", "Cyborg", "Fat ass", "Really Old", "Dumb", "Weird", "Gooey", "Fluffy", "Distinguished", "Freshman", "High Schooler", "Extreme", "Dumpy"]
+let adjectives = ["Li'l", "Big Ass", "Hobo", "Blind", "Hipster", "Nerdy", "Bad Shit", "Cyborg", "Fat Ass", "Really Old", "Dumb", "Weird", "Gooey", "Fluffy", "Freshman", "High Schooler", "Extreme", "Dumpy", "Hairy", "Smelly", "The Dark Lord", "A Wild", "Ferral", "Extra Large", "Teat", "Stoner", "Unhealthy", "Half of", "Left Ear of", "Right Ear of", "Not", "Crazy", "Attractive", "Uncle", "Professor", "A Boy Called", "A Girl Called", "Super", "Hashtag", "Zombie", "Father", "Mother", "Racist", "Drunk", "Student Formerly Known As", "Bite-Sized", "Mythological", "Mr.", "Mrs.", "Wizard", "Private"]
 
 class PocketGrover:NSObject {
     var name: String?
@@ -25,7 +25,10 @@ class PocketGrover:NSObject {
     var state: State?
     var glanceInfo: StudentDirectoryItem?
     var tweets : UserTweets?
-    var health:Int = 10
+    dynamic var health = 10
+    func loseHealth(amount:Int){
+        health -= amount
+    }
     init(glanceInfo:StudentDirectoryItem){
         let randAdjNum = Int(arc4random_uniform(UInt32(adjectives.count)))
         name = "\(adjectives[randAdjNum]) \(glanceInfo.name!.componentsSeparatedByString(" ")[0])"
