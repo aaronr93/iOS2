@@ -13,7 +13,7 @@ import Accounts
 
 
 
-class PocketGroversVC: UIViewController {
+class PocketGroversVC: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate {
     
     
     
@@ -30,10 +30,14 @@ class PocketGroversVC: UIViewController {
         }
         
         override func observeValueForKeyPath(keyPath: String?, ofObject object: AnyObject?, change: [String : AnyObject]?, context: UnsafeMutablePointer<Void>) {
-            infoLabel.text = ("\(target.name!) lost health! Health is now \(change![NSKeyValueChangeNewKey]!).")
-            let blurView = UIView(frame: image.bounds)
-            blurView.backgroundColor = UIColor(colorLiteralRed: 1.0, green: 0.5, blue: 0.5, alpha: 0.2)
-            image.addSubview(blurView)
+            if(target.health > 0){
+                infoLabel.text = ("\(target.name!) lost health! Health is now \(change![NSKeyValueChangeNewKey]!).")
+                let blurView = UIView(frame: image.bounds)
+                blurView.backgroundColor = UIColor(colorLiteralRed: 1.0, green: 0.5, blue: 0.5, alpha: 0.2)
+                image.addSubview(blurView)
+            } else{
+                infoLabel.text = ("\(target.name!) is dead.")
+            }
         }
         
         deinit{
@@ -47,6 +51,9 @@ class PocketGroversVC: UIViewController {
     @IBOutlet weak var homeImage: UIImageView!
     @IBOutlet weak var awayName: UILabel!
     @IBOutlet weak var awayImage: UIImageView!
+    @IBOutlet weak var attackPicker : UIPickerView!
+    @IBOutlet weak var attackButton: UIButton!
+    
 
     var player1Student:StudentDirectoryItem!
     var player2Student:StudentDirectoryItem!
@@ -55,13 +62,18 @@ class PocketGroversVC: UIViewController {
     let queue = NSOperationQueue()
     let observer1 = GroverObserver()
     let observer2 = GroverObserver()
+    var selectedAttack = 0
+    var attackData = ["Select an Attack", "Attack 1", "Attack 2", "Defense 1", "Defense 2"]
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        console.font = UIFont(name: "PokemonGB", size: 10)
-        homeName.font = UIFont(name: "PokemonGB", size: 12)
-        awayName.font = UIFont(name: "PokemonGB", size: 12)
+        
+        //fonts
+        console.font = UIFont(name: "PokemonGB", size: 16)
+        homeName.font = UIFont(name: "PokemonGB", size: 20)
+        awayName.font = UIFont(name: "PokemonGB", size: 20)
+        //attackButton.titleLabel?.font = UIFont(name: "Pokemon GB", size: 10)
         
         //download images in the background
         getImages()
@@ -75,6 +87,12 @@ class PocketGroversVC: UIViewController {
         //watch the grovers
         observer1.watch(grover1, image: homeImage, infoLabel: console)
         observer2.watch(grover2, image: awayImage, infoLabel: console)
+        
+        //set up the attack picker
+        attackPicker.dataSource = self
+        attackPicker.delegate = self
+        attackPicker.selectRow(0, inComponent: 0, animated: false)
+        
         
         
     }
@@ -108,10 +126,40 @@ class PocketGroversVC: UIViewController {
         queue.addOperation(op2)
     }
     
-    @IBAction func testObserver(){
-        print(grover1.name!)
-        grover1.loseHealth(1)
-        print(grover1.health)
+    
+    //picker stuff
+    func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int {
+        return 1
     }
-
+    
+    func pickerView(pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return attackData.count
+    }
+    
+    func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return attackData[row]
+    }
+    
+    func pickerView(pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusingView view: UIView?) -> UIView
+    {
+        let pickerLabel = UILabel()
+        pickerLabel.textColor = UIColor.blackColor()
+        pickerLabel.text = attackData[row]
+        pickerLabel.font = UIFont(name: "PokemonGB", size: 14)
+        pickerLabel.textAlignment = NSTextAlignment.Center
+        return pickerLabel
+    }
+    
+    func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        selectedAttack = row
+    }
+    
+    @IBAction func attack(){
+        if(selectedAttack != 0){
+            grover2.loseHealth(1)
+        } else {
+            console.text = "Please select an attack."
+        }
+    }
+    
 }
