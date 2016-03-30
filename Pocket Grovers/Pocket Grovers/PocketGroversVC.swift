@@ -86,7 +86,7 @@ class PocketGroversVC: UIViewController {
     
     //load images in the background
     func getImages(){
-        let op = imageDownloader(url: player1.image! as String)
+        let op = imageDownloader(url: player1Student.image! as String)
         op.completionBlock = {
             NSOperationQueue.mainQueue().addOperationWithBlock({
                 if(!op.cancelled){
@@ -96,7 +96,7 @@ class PocketGroversVC: UIViewController {
         }
         queue.addOperation(op)
         
-        let op2 = imageDownloader(url: player2.image! as String)
+        let op2 = imageDownloader(url: player2Student.image! as String)
         op2.completionBlock = {
             NSOperationQueue.mainQueue().addOperationWithBlock({
                 if(!op2.cancelled){
