@@ -50,6 +50,12 @@
                                     <segue destination="tkq-Py-LJs" kind="show" id="96X-WC-dox"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="NOTE: This will only work on the GCC domain." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cqo-et-0lY">
+                                <rect key="frame" x="124" y="28" width="352" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="1" green="0.029659358909999999" blue="0.08340428204" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -59,7 +65,9 @@
                             <constraint firstItem="ubh-XU-lyl" firstAttribute="centerX" secondItem="Ffg-YO-6ft" secondAttribute="centerX" id="828-vy-PXp"/>
                             <constraint firstItem="Fu1-Zx-aFX" firstAttribute="leading" secondItem="ubh-XU-lyl" secondAttribute="leading" id="ACY-bI-Pbz"/>
                             <constraint firstItem="Fu1-Zx-aFX" firstAttribute="trailing" secondItem="ubh-XU-lyl" secondAttribute="trailing" id="CA6-XB-Rkf"/>
+                            <constraint firstItem="cqo-et-0lY" firstAttribute="top" secondItem="AaZ-Gt-ehh" secondAttribute="bottom" constant="8" symbolic="YES" id="FTc-6s-dRD"/>
                             <constraint firstItem="JvT-AN-csB" firstAttribute="top" secondItem="Fu1-Zx-aFX" secondAttribute="bottom" constant="16" id="Fgg-8g-th0"/>
+                            <constraint firstItem="cqo-et-0lY" firstAttribute="centerX" secondItem="ubh-XU-lyl" secondAttribute="centerX" id="L5S-tC-w5R"/>
                             <constraint firstItem="Fu1-Zx-aFX" firstAttribute="trailing" secondItem="JvT-AN-csB" secondAttribute="trailing" id="fgM-hf-Mwl"/>
                             <constraint firstItem="Fu1-Zx-aFX" firstAttribute="leading" secondItem="Deg-BM-YOQ" secondAttribute="trailing" constant="8" symbolic="YES" id="ge2-ut-Yiu"/>
                             <constraint firstItem="Deg-BM-YOQ" firstAttribute="centerY" secondItem="Fu1-Zx-aFX" secondAttribute="centerY" id="nRL-QN-6Qn"/>
@@ -101,17 +109,17 @@
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jYP-YV-4yI">
-                                <rect key="frame" x="272" y="89" width="150" height="62"/>
+                                <rect key="frame" x="20" y="89" width="402" height="62"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="62" id="h5e-zQ-Qpv"/>
-                                    <constraint firstAttribute="width" constant="150" id="lxk-x1-e8f"/>
+                                    <constraint firstAttribute="width" constant="402" id="lxk-x1-e8f"/>
                                 </constraints>
                                 <attributedString key="attributedText">
                                     <fragment content="Away">
                                         <attributes>
                                             <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <font key="NSFont" metaFont="system" size="36"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="right" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
                                         </attributes>
                                     </fragment>
                                 </attributedString>
@@ -120,10 +128,10 @@
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Y6X-er-Mxi">
                                 <rect key="frame" x="0.0" y="443" width="311" height="157"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" usesAttributedText="YES" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ESl-wn-Sma">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ESl-wn-Sma">
                                         <rect key="frame" x="0.0" y="-2" width="311" height="151"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="303" id="Fhi-od-rCs"/>
+                                            <constraint firstAttribute="width" constant="311" id="Fhi-od-rCs"/>
                                             <constraint firstAttribute="height" constant="151" id="zXg-A0-v1z"/>
                                         </constraints>
                                         <attributedString key="attributedText">
@@ -142,7 +150,7 @@
                                     <constraint firstItem="ESl-wn-Sma" firstAttribute="bottom" secondItem="Y6X-er-Mxi" secondAttribute="bottomMargin" id="FjG-Fw-eqh"/>
                                     <constraint firstAttribute="trailing" secondItem="ESl-wn-Sma" secondAttribute="trailing" id="Tef-Qg-YaV"/>
                                     <constraint firstItem="ESl-wn-Sma" firstAttribute="top" secondItem="Y6X-er-Mxi" secondAttribute="top" constant="-2" id="jPI-xE-WNA"/>
-                                    <constraint firstItem="ESl-wn-Sma" firstAttribute="leading" secondItem="Y6X-er-Mxi" secondAttribute="leadingMargin" id="vLd-p2-oV2"/>
+                                    <constraint firstItem="ESl-wn-Sma" firstAttribute="leading" secondItem="Y6X-er-Mxi" secondAttribute="leadingMargin" constant="-8" id="vLd-p2-oV2"/>
                                 </constraints>
                             </scrollView>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="KiH-pk-cVD">
@@ -169,41 +177,50 @@
                                 </cells>
                             </collectionView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EQs-H1-sdP">
-                                <rect key="frame" x="178" y="310" width="150" height="49"/>
+                                <rect key="frame" x="186" y="310" width="394" height="49"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="49" id="dEq-O7-OGE"/>
-                                    <constraint firstAttribute="width" constant="150" id="u7F-bo-l15"/>
+                                    <constraint firstAttribute="height" constant="49" id="rdm-Tw-k6Z"/>
                                 </constraints>
                                 <attributedString key="attributedText">
                                     <fragment content="Home">
                                         <attributes>
                                             <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <font key="NSFont" metaFont="system" size="36"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
                                         </attributes>
                                     </fragment>
                                 </attributedString>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="q2f-M9-dBo">
+                                <rect key="frame" x="252" y="20" width="97" height="30"/>
+                                <state key="normal" title="TEST ATTACK"/>
+                                <connections>
+                                    <action selector="testObserver" destination="tkq-Py-LJs" eventType="touchUpInside" id="Ctc-Kc-pB9"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="KiH-pk-cVD" firstAttribute="bottom" secondItem="M8v-vT-7nX" secondAttribute="top" id="4Qe-w9-Pdp"/>
                             <constraint firstItem="Y6X-er-Mxi" firstAttribute="top" secondItem="CkH-dQ-TGP" secondAttribute="bottom" constant="8" symbolic="YES" id="5oH-Gg-rJu"/>
                             <constraint firstItem="JEZ-10-A7H" firstAttribute="trailing" secondItem="CIX-ch-QMv" secondAttribute="trailingMargin" id="9YR-jD-KQx"/>
+                            <constraint firstItem="q2f-M9-dBo" firstAttribute="centerX" secondItem="CIX-ch-QMv" secondAttribute="centerX" id="An0-R4-xdQ"/>
                             <constraint firstItem="CkH-dQ-TGP" firstAttribute="leading" secondItem="CIX-ch-QMv" secondAttribute="leadingMargin" id="C1o-Pv-pJc"/>
                             <constraint firstAttribute="trailing" secondItem="KiH-pk-cVD" secondAttribute="trailing" id="D4O-zb-ySb"/>
                             <constraint firstItem="Y6X-er-Mxi" firstAttribute="leading" secondItem="CIX-ch-QMv" secondAttribute="leading" id="N4w-yX-ml2"/>
-                            <constraint firstItem="KiH-pk-cVD" firstAttribute="top" secondItem="EQs-H1-sdP" secondAttribute="bottom" constant="84" id="NNp-zg-IVV"/>
+                            <constraint firstItem="KiH-pk-cVD" firstAttribute="top" secondItem="EQs-H1-sdP" secondAttribute="bottom" constant="84" id="Ovk-qG-ng2"/>
                             <constraint firstItem="jYP-YV-4yI" firstAttribute="centerY" secondItem="JEZ-10-A7H" secondAttribute="centerY" id="PaC-7k-ZQQ"/>
                             <constraint firstItem="jYP-YV-4yI" firstAttribute="top" secondItem="wI5-hg-nyP" secondAttribute="bottom" constant="69" id="atR-dN-Zss"/>
                             <constraint firstItem="KiH-pk-cVD" firstAttribute="leading" secondItem="Y6X-er-Mxi" secondAttribute="trailing" constant="8" symbolic="YES" id="dxW-tU-J9K"/>
                             <constraint firstItem="JEZ-10-A7H" firstAttribute="leading" secondItem="jYP-YV-4yI" secondAttribute="trailing" constant="8" symbolic="YES" id="hBF-fc-cvd"/>
-                            <constraint firstItem="CkH-dQ-TGP" firstAttribute="centerY" secondItem="EQs-H1-sdP" secondAttribute="centerY" id="igh-Ir-NgH"/>
+                            <constraint firstItem="q2f-M9-dBo" firstAttribute="top" secondItem="JEZ-10-A7H" secondAttribute="top" id="kVD-9U-LoB"/>
+                            <constraint firstItem="EQs-H1-sdP" firstAttribute="leading" secondItem="CkH-dQ-TGP" secondAttribute="trailing" constant="16" id="kZw-fu-eGT"/>
                             <constraint firstItem="JEZ-10-A7H" firstAttribute="top" secondItem="wI5-hg-nyP" secondAttribute="bottom" id="n0C-yP-TVW"/>
+                            <constraint firstItem="EQs-H1-sdP" firstAttribute="trailing" secondItem="JEZ-10-A7H" secondAttribute="trailing" id="nW6-QD-WEK"/>
+                            <constraint firstItem="EQs-H1-sdP" firstAttribute="centerY" secondItem="CkH-dQ-TGP" secondAttribute="centerY" id="phb-fH-1IV"/>
                             <constraint firstItem="Y6X-er-Mxi" firstAttribute="bottom" secondItem="M8v-vT-7nX" secondAttribute="top" id="pmm-Sv-uod"/>
                             <constraint firstItem="KiH-pk-cVD" firstAttribute="top" secondItem="Y6X-er-Mxi" secondAttribute="top" id="rvL-wQ-ieb"/>
-                            <constraint firstItem="EQs-H1-sdP" firstAttribute="leading" secondItem="CkH-dQ-TGP" secondAttribute="trailing" constant="8" symbolic="YES" id="u42-XM-q4D"/>
                             <constraint firstItem="CkH-dQ-TGP" firstAttribute="top" secondItem="wI5-hg-nyP" secondAttribute="bottom" constant="215" id="whZ-As-jRE"/>
                         </constraints>
                     </view>
