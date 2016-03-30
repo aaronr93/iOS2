@@ -35,6 +35,13 @@ class StudentDirectoryItem: NSObject {
         
     }
     
+    init(name: NSString, city: NSString, state: NSString, id: NSString){
+        self.name = name
+        self.city = city
+        self.state = state
+        self.id = id
+    }
+    
     func createDictionary() -> NSArray {
         let dict = NSMutableDictionary()
         let data = NSMutableArray()
