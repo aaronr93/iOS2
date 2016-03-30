@@ -17,7 +17,6 @@
 		36B92BAA1C9F331000E29A3B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 36B92BA81C9F331000E29A3B /* Main.storyboard */; };
 		36B92BAC1C9F331000E29A3B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 36B92BAB1C9F331000E29A3B /* Assets.xcassets */; };
 		36B92BAF1C9F331000E29A3B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 36B92BAD1C9F331000E29A3B /* LaunchScreen.storyboard */; };
-		9BACC3C71CA9C03C006B8B09 /* Pokemon GB.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9BACC3C61CA9C03C006B8B09 /* Pokemon GB.ttf */; };
 		9BACC3C91CA9CC99006B8B09 /* ImageDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BACC3C81CA9CC99006B8B09 /* ImageDownloader.swift */; };
 		9BACC3CF1CA9E5D6006B8B09 /* WelcomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BACC3CE1CA9E5D6006B8B09 /* WelcomeVC.swift */; };
 /* End PBXBuildFile section */
@@ -35,7 +34,6 @@
 		36B92BAB1C9F331000E29A3B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		36B92BAE1C9F331000E29A3B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		36B92BB01C9F331000E29A3B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		9BACC3C61CA9C03C006B8B09 /* Pokemon GB.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pokemon GB.ttf"; sourceTree = "<group>"; };
 		9BACC3C81CA9CC99006B8B09 /* ImageDownloader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageDownloader.swift; sourceTree = "<group>"; };
 		9BACC3CE1CA9E5D6006B8B09 /* WelcomeVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomeVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -101,7 +99,6 @@
 		36B92BA31C9F331000E29A3B /* Pocket Grovers */ = {
 			isa = PBXGroup;
 			children = (
-				9BACC3C61CA9C03C006B8B09 /* Pokemon GB.ttf */,
 				3631039E1CA0954F00536DE4 /* Views */,
 				3631039D1CA0954500536DE4 /* Repositories */,
 				3631039C1CA0953800536DE4 /* Models */,
@@ -170,7 +167,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9BACC3C71CA9C03C006B8B09 /* Pokemon GB.ttf in Resources */,
 				36B92BAF1C9F331000E29A3B /* LaunchScreen.storyboard in Resources */,
 				36B92BAC1C9F331000E29A3B /* Assets.xcassets in Resources */,
 				36B92BAA1C9F331000E29A3B /* Main.storyboard in Resources */,
