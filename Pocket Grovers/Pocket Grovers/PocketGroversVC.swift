@@ -104,7 +104,7 @@ class PocketGroversVC: UIViewController, UIPickerViewDataSource, UIPickerViewDel
     
     //load images in the background
     func getImages(){
-        let op = imageDownloader(url: player1Student.image!)
+        let op = imageDownloader(url: player1Student.image! as String)
         op.completionBlock = {
             NSOperationQueue.mainQueue().addOperationWithBlock({
                 if(!op.cancelled){
@@ -114,7 +114,7 @@ class PocketGroversVC: UIViewController, UIPickerViewDataSource, UIPickerViewDel
         }
         queue.addOperation(op)
         
-        let op2 = imageDownloader(url: player2Student.image!)
+        let op2 = imageDownloader(url: player2Student.image! as String)
         op2.completionBlock = {
             NSOperationQueue.mainQueue().addOperationWithBlock({
                 if(!op2.cancelled){
