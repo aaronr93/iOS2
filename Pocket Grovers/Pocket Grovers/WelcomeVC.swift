@@ -36,7 +36,8 @@ class WelcomeVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        player1TextField.text = "452071"
+        player2TextField.text = "453298"
         // Do any additional setup after loading the view.
     }
 

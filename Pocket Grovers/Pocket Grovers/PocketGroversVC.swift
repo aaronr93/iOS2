@@ -48,8 +48,8 @@ class PocketGroversVC: UIViewController {
     @IBOutlet weak var awayName: UILabel!
     @IBOutlet weak var awayImage: UIImageView!
 
-    var player1Student = StudentDirectoryItem(id: "452071")
-    var player2Student = StudentDirectoryItem(id: "453298")
+    var player1Student:StudentDirectoryItem!
+    var player2Student:StudentDirectoryItem!
     var grover1:PocketGrover!
     var grover2:PocketGrover!
     let queue = NSOperationQueue()
