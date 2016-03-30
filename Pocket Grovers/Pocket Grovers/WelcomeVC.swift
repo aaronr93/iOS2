@@ -13,18 +13,21 @@ class WelcomeVC: UIViewController {
     @IBOutlet weak var player1TextField : UITextField!
     @IBOutlet weak var player2TextField : UITextField!
     
+    let directory = DirectoryInformation()
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         let dest = segue.destinationViewController as! PocketGroversVC
         
-        if let p1 = player1TextField.text{
-            if(p1 != "" ){
+        if let p1 = player1TextField.text {
+            if(p1 != "" ) {
                 dest.player1Student = StudentDirectoryItem(id: p1)
+                directory.save(dest.player1Student)
             }
         }
-        if let p2 = player2TextField.text{
+        if let p2 = player2TextField.text {
             if(p2 != "") {
                 dest.player2Student = StudentDirectoryItem(id: p2)
+                directory.save(dest.player2Student)
             }
         }
         
@@ -40,29 +43,11 @@ class WelcomeVC: UIViewController {
         player2TextField.text = "453298"
         // Do any additional setup after loading the view.
         
-        let directory = DirectoryInformation()
         directory.loadFromFile()
         
-        let item = StudentDirectoryItem(id: "446590")
-        item.name = "Sam Kibler"
-        item.state = "VA"
-        item.city = "Roanoke"
-        item.image = "kibs.jpg"
-        
-        let item2 = StudentDirectoryItem(id: "453298")
-        item2.name = "Aaron Rosenberger"
-        item2.state = "VA"
-        item2.city = "Roanoke"
-        item2.image = "aaron.jpg"
-        
-        // Example of save function
-        directory.save(item)
-        
-        // Example of saveAll function
-        directory.saveAll([item, item2])
-        
-        print(directory[0].name!)
-        print(directory[1].name!)
+        for person in directory.directoryItems {
+            print(person.name)
+        }
         
     }
 

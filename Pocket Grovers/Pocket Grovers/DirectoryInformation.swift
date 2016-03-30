@@ -13,6 +13,11 @@ class DirectoryInformation: NSObject {
     var directoryItems = [StudentDirectoryItem]()
     let fileManager = NSFileManager.defaultManager()
     
+    override init() {
+        super.init()
+        directoryItems.removeAll()
+    }
+    
     subscript(index: Int) -> StudentDirectoryItem {
         get {
             if index >= directoryItems.count {
