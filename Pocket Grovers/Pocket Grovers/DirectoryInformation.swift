@@ -18,21 +18,19 @@ class DirectoryInformation: NSObject {
         directoryItems.removeAll()
     }
     
-    subscript(index: Int) -> StudentDirectoryItem {
+    subscript(id: NSString) -> StudentDirectoryItem {
         get {
-            if index >= directoryItems.count {
-                print("Attempting to access Directory Information for an index at which the directory information does not exist. The returned value is the item closest to the desired index.")
-                return directoryItems[directoryItems.count - 1]
-            } else if index < 0 {
-                print("Attempting to access Directory Information for an index at which the directory information does not exist. The returned value is the item closest to the desired index.")
-                return directoryItems[0]
-            } else {
-                return directoryItems[index]
+            // Find an item that matches the subscripted ID
+            for item in directoryItems {
+                if item.id! == id {
+                    return item
+                }
             }
-        }
-        set(newValue) {
-            let item = directoryItems[index]
-            save(item)
+            
+            // If we didn't find it, create and save it
+            let newItem = StudentDirectoryItem(id: id)
+            self.save(newItem)
+            return newItem
         }
     }
     
@@ -90,6 +88,8 @@ class DirectoryInformation: NSObject {
         
         if !directoryItems.contains(item) {
             directoryItems.append(item)
+        } else {
+            return
         }
         
         // Get the path of the library file contents

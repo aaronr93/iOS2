@@ -73,7 +73,7 @@ class PocketGroversVC: UIViewController, UIPickerViewDataSource, UIPickerViewDel
         console.font = UIFont(name: "PokemonGB", size: 16)
         homeName.font = UIFont(name: "PokemonGB", size: 20)
         awayName.font = UIFont(name: "PokemonGB", size: 20)
-        //attackButton.titleLabel?.font = UIFont(name: "Pokemon GB", size: 10)
+        attackButton.titleLabel?.font = UIFont(name: "Pokemon GB", size: 20)
         
         //download images in the background
         getImages()
@@ -83,6 +83,8 @@ class PocketGroversVC: UIViewController, UIPickerViewDataSource, UIPickerViewDel
         grover2 = PocketGrover(glanceInfo: player2Student)
         homeName.text = grover1.name!
         awayName.text = grover2.name!
+        
+        console.text = "\(grover2.name!) wants to fight!"
         
         //watch the grovers
         observer1.watch(grover1, image: homeImage, infoLabel: console)

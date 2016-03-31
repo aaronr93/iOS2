@@ -19,20 +19,15 @@ class WelcomeVC: UIViewController {
         let dest = segue.destinationViewController as! PocketGroversVC
         
         if let p1 = player1TextField.text {
-            if(p1 != "" ) {
-                dest.player1Student = StudentDirectoryItem(id: p1)
-                directory.save(dest.player1Student)
+            if (p1 != "") {
+                dest.player1Student = directory[p1]
             }
         }
         if let p2 = player2TextField.text {
-            if(p2 != "") {
-                dest.player2Student = StudentDirectoryItem(id: p2)
-                directory.save(dest.player2Student)
+            if (p2 != "") {
+                dest.player2Student = directory[p2]
             }
         }
-        
-        
-        
         
     }
     
@@ -46,7 +41,7 @@ class WelcomeVC: UIViewController {
         directory.loadFromFile()
         
         for person in directory.directoryItems {
-            print(person.name)
+            print(person.id!)
         }
         
     }
