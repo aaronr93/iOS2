@@ -18,6 +18,12 @@
 		36B92BAC1C9F331000E29A3B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 36B92BAB1C9F331000E29A3B /* Assets.xcassets */; };
 		36B92BAF1C9F331000E29A3B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 36B92BAD1C9F331000E29A3B /* LaunchScreen.storyboard */; };
 		9B7AD0E01CAC9AE200BF036F /* Pokemon GB.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9B7AD0DF1CAC9AE200BF036F /* Pokemon GB.ttf */; };
+		9B7AD1061CAD9AD400BF036F /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B7AD1021CAD9AD400BF036F /* Fabric.framework */; };
+		9B7AD1071CAD9AD400BF036F /* TwitterKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B7AD1031CAD9AD400BF036F /* TwitterKit.framework */; };
+		9B7AD1081CAD9AD400BF036F /* TwitterKitResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 9B7AD1041CAD9AD400BF036F /* TwitterKitResources.bundle */; };
+		9B7AD1091CAD9AD400BF036F /* TwitterCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B7AD1051CAD9AD400BF036F /* TwitterCore.framework */; };
+		9B7AD10B1CADBC9700BF036F /* TwitterClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B7AD10A1CADBC9700BF036F /* TwitterClient.swift */; };
+		9B7AD10F1CADC90000BF036F /* TwitterLoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B7AD10E1CADC90000BF036F /* TwitterLoginVC.swift */; };
 		9BACC3C91CA9CC99006B8B09 /* ImageDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BACC3C81CA9CC99006B8B09 /* ImageDownloader.swift */; };
 		9BACC3CF1CA9E5D6006B8B09 /* WelcomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BACC3CE1CA9E5D6006B8B09 /* WelcomeVC.swift */; };
 /* End PBXBuildFile section */
@@ -36,6 +42,12 @@
 		36B92BAE1C9F331000E29A3B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		36B92BB01C9F331000E29A3B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9B7AD0DF1CAC9AE200BF036F /* Pokemon GB.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pokemon GB.ttf"; sourceTree = "<group>"; };
+		9B7AD1021CAD9AD400BF036F /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Fabric.framework; sourceTree = SOURCE_ROOT; };
+		9B7AD1031CAD9AD400BF036F /* TwitterKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TwitterKit.framework; sourceTree = SOURCE_ROOT; };
+		9B7AD1041CAD9AD400BF036F /* TwitterKitResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = TwitterKitResources.bundle; path = TwitterKit.framework/Versions/A/Resources/TwitterKitResources.bundle; sourceTree = SOURCE_ROOT; };
+		9B7AD1051CAD9AD400BF036F /* TwitterCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TwitterCore.framework; sourceTree = SOURCE_ROOT; };
+		9B7AD10A1CADBC9700BF036F /* TwitterClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TwitterClient.swift; sourceTree = "<group>"; };
+		9B7AD10E1CADC90000BF036F /* TwitterLoginVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TwitterLoginVC.swift; sourceTree = "<group>"; };
 		9BACC3C81CA9CC99006B8B09 /* ImageDownloader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageDownloader.swift; sourceTree = "<group>"; };
 		9BACC3CE1CA9E5D6006B8B09 /* WelcomeVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomeVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -45,6 +57,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9B7AD1061CAD9AD400BF036F /* Fabric.framework in Frameworks */,
+				9B7AD1091CAD9AD400BF036F /* TwitterCore.framework in Frameworks */,
+				9B7AD1071CAD9AD400BF036F /* TwitterKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -67,6 +82,7 @@
 			children = (
 				363103A91CA0990900536DE4 /* UserTweets.swift */,
 				363103AB1CA0993700536DE4 /* DirectoryInformation.swift */,
+				9B7AD10A1CADBC9700BF036F /* TwitterClient.swift */,
 			);
 			name = Repositories;
 			sourceTree = "<group>";
@@ -78,6 +94,7 @@
 				36B92BA81C9F331000E29A3B /* Main.storyboard */,
 				36B92BAD1C9F331000E29A3B /* LaunchScreen.storyboard */,
 				9BACC3CE1CA9E5D6006B8B09 /* WelcomeVC.swift */,
+				9B7AD10E1CADC90000BF036F /* TwitterLoginVC.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -101,6 +118,10 @@
 		36B92BA31C9F331000E29A3B /* Pocket Grovers */ = {
 			isa = PBXGroup;
 			children = (
+				9B7AD1021CAD9AD400BF036F /* Fabric.framework */,
+				9B7AD1031CAD9AD400BF036F /* TwitterKit.framework */,
+				9B7AD1041CAD9AD400BF036F /* TwitterKitResources.bundle */,
+				9B7AD1051CAD9AD400BF036F /* TwitterCore.framework */,
 				9B7AD0DF1CAC9AE200BF036F /* Pokemon GB.ttf */,
 				3631039E1CA0954F00536DE4 /* Views */,
 				3631039D1CA0954500536DE4 /* Repositories */,
@@ -122,6 +143,7 @@
 				36B92B9D1C9F331000E29A3B /* Sources */,
 				36B92B9E1C9F331000E29A3B /* Frameworks */,
 				36B92B9F1C9F331000E29A3B /* Resources */,
+				9B7AD1011CAD9ABE00BF036F /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -174,10 +196,27 @@
 				36B92BAF1C9F331000E29A3B /* LaunchScreen.storyboard in Resources */,
 				36B92BAC1C9F331000E29A3B /* Assets.xcassets in Resources */,
 				36B92BAA1C9F331000E29A3B /* Main.storyboard in Resources */,
+				9B7AD1081CAD9AD400BF036F /* TwitterKitResources.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		9B7AD1011CAD9ABE00BF036F /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "./Fabric.framework/run 65c67547c210d95c99e78f43987f63d06ca0fd4c 444303b185afb73fa889f266e6017a377bf7122e6d4024a5f5224257c6c2450e";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		36B92B9D1C9F331000E29A3B /* Sources */ = {
@@ -191,6 +230,8 @@
 				363103A61CA0968F00536DE4 /* PocketGrover.swift in Sources */,
 				363103AC1CA0993700536DE4 /* DirectoryInformation.swift in Sources */,
 				9BACC3CF1CA9E5D6006B8B09 /* WelcomeVC.swift in Sources */,
+				9B7AD10F1CADC90000BF036F /* TwitterLoginVC.swift in Sources */,
+				9B7AD10B1CADBC9700BF036F /* TwitterClient.swift in Sources */,
 				363103991CA08F6300536DE4 /* PocketGroversVC.swift in Sources */,
 				363103A41CA0966500536DE4 /* Tweet.swift in Sources */,
 			);
@@ -305,6 +346,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = "Pocket Grovers/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "GCC.Pocket-Grovers";
@@ -316,6 +361,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = "Pocket Grovers/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "GCC.Pocket-Grovers";

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import TwitterKit
 
 class WelcomeVC: UIViewController {
     
@@ -43,6 +44,9 @@ class WelcomeVC: UIViewController {
         for person in directory.directoryItems {
             print(person.id!)
         }
+        
+        TwitterClient.sharedInstance.findUserTweets("twitter")
+        
         
     }
 

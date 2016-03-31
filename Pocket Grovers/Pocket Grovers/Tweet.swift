@@ -11,4 +11,7 @@ import Foundation
 class Tweet {
     var rawText: String?
     var keywords = [String]()
+    init(text:String){
+        rawText = text
+    }
 }
