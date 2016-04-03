@@ -18,7 +18,7 @@ class TwitterClient{
         print("fetching tweets for \(screenName)")
         var returnTweets = [Tweet]()
         let statusesShowEndpoint = "https://api.twitter.com/1.1/statuses/user_timeline.json"
-        let params = ["screen_name": screenName, "count":"20"]
+        let params = ["screen_name": screenName, "count":"100"]
         var clientError : NSError?
         
         let request = client.URLRequestWithMethod("GET", URL: statusesShowEndpoint, parameters: params, error: &clientError)
@@ -58,14 +58,14 @@ class TwitterClient{
                             if(!self.stopWords.contains(word.lowercaseString)){
                                 let tf:Double = Double(tweet.rawText!.lowercaseString.componentsSeparatedByString(word).count-1)/Double(words.count)
                                 let idf:Double = log(Double(returnTweets.count)/Double(documentFrequency[word]!))
-                                termScores.append((word, tf/idf))
+                                termScores.append((word, tf*idf))
                             }
                         }
                         let sortedTerms = termScores.sort{$0.1 > $1.1}
                         //for now, get one keyword
                         tweet.keywords.append(sortedTerms[0].0)
-                        print("\traw text: \(tweet.rawText!.lowercaseString)")
-                        print("\tkey words: \(tweet.keywords)")
+                        //print("\traw text: \(tweet.rawText!.lowercaseString)")
+                        //print("\tkey words: \(tweet.keywords)")
                     }
                 }
                 else {
