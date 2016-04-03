@@ -45,7 +45,6 @@ class WelcomeVC: UIViewController {
             print(person.id!)
         }
         
-        TwitterClient.sharedInstance.findUserTweets("twitter")
         
         
     }

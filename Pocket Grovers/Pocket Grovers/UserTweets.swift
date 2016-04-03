@@ -12,7 +12,7 @@ class UserTweets: NSObject {
     var tweets = [Tweet]()
     var username: String!
     func load() {
-        //GET https://api.twitter.com/1.1/statuses/user_timeline.json?screen_name=\(username)
+        tweets = TwitterClient.sharedInstance.findUserTweets(username)
         
     }
     init(username:String){
