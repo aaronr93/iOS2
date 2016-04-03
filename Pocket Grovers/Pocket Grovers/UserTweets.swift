@@ -8,14 +8,11 @@
 
 import Foundation
 
+
+
 class UserTweets: NSObject {
     var tweets = [Tweet]()
     var username: String!
-    func load() {
-        tweets = TwitterClient.sharedInstance.findUserTweets(username)
-        
-    }
-    init(username:String){
-        self.username = username
-    }
+    
+    
 }

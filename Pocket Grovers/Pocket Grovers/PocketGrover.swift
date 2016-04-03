@@ -30,13 +30,13 @@ class PocketGrover:NSObject {
         health -= amount
     }
     init(glanceInfo:StudentDirectoryItem){
+        print("generating pocket grover")
         let randAdjNum = Int(arc4random_uniform(UInt32(adjectives.count)))
         name = "\(adjectives[randAdjNum]) \(glanceInfo.name!.componentsSeparatedByString(" ")[0])"
         self.glanceInfo = glanceInfo
         //search twitter using first and last name
-        let twitterHandle = TwitterClient.sharedInstance.findUser("\(glanceInfo.name!.componentsSeparatedByString(" ")[0]) \(glanceInfo.name!.componentsSeparatedByString(" ")[2])")
-        tweets = UserTweets(username: twitterHandle)
-        self.tweets?.tweets = TwitterClient.sharedInstance.findUserTweets(twitterHandle)
+        tweets = UserTweets()
+        TwitterClient.sharedInstance.tweetsFromQuery("\(glanceInfo.name!.componentsSeparatedByString(" ")[0]) \(glanceInfo.name!.componentsSeparatedByString(" ")[2])", userTweets: tweets!)
     }
     
     init(glanceInfo:StudentDirectoryItem, tweets:UserTweets){

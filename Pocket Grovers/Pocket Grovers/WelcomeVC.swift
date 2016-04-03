@@ -45,8 +45,6 @@ class WelcomeVC: UIViewController {
             print(person.id!)
         }
         
-        
-        
     }
 
     override func didReceiveMemoryWarning() {
