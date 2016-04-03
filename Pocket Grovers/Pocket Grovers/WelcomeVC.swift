@@ -44,6 +44,16 @@ class WelcomeVC: UIViewController {
         for person in directory.directoryItems {
             print(person.id!)
         }
+        if(directory.directoryItems.count > 1){
+            let randNum1 = Int(arc4random_uniform(UInt32(directory.directoryItems.count)))
+            var randNum2 = Int(arc4random_uniform(UInt32(directory.directoryItems.count)))
+            while(randNum1 == randNum2){
+                randNum2 = Int(arc4random_uniform(UInt32(directory.directoryItems.count)))
+            }
+            player1TextField.text = directory.directoryItems[randNum1].id as? String
+            player2TextField.text = directory.directoryItems[randNum2].id as? String
+        }
+        
         
     }
 

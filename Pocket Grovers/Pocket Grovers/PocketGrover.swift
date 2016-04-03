@@ -17,7 +17,7 @@ enum State {
     case Confused
 }
 
-let adjectives = ["Li'l", "Big Ol'", "Hobo", "Blind", "Hipster", "Nerdy", "Bad", "Cyborg", "Tubby", "Really Old", "Dumb", "Weird", "Gooey", "Fluffy", "Freshman", "High Schooler", "Extreme", "Dumpy", "Hairy", "Smelly", "The Dark Lord", "A Wild", "Feral", "Extra Large", "Test", "Stoner", "Unhealthy", "Half of", "Left Ear of", "Right Ear of", "Not", "Crazy", "Attractive", "Uncle", "Professor", "A Boy Called", "A Girl Called", "Super", "Hashtag", "Zombie", "Father", "Mother", "Racist", "Student Formerly Known As", "Bite-Sized", "Mythological", "Mr.", "Mrs.", "Wizard", "Private", "Schwifty", "Sexist", "Curious"]
+let adjectives = ["Li'l", "Big Ol'", "Hobo", "Blind", "Hipster", "Nerdy", "Bad", "Cyborg", "Tubby", "Really Old", "Dumb", "Weird", "Gooey", "Fluffy", "Freshman", "High Schooler", "Extreme", "Dumpy", "Hairy", "Smelly", "The Dark Lord", "A Wild", "Feral", "Extra Large", "Test", "Stoner", "Unhealthy", "Half of", "Left Ear of", "Right Ear of", "Not", "Crazy", "Attractive", "Uncle", "Professor", "A Boy Called", "A Girl Called", "Super", "Hashtag", "Zombie", "Father", "Mother", "Racist", "Student Formerly Known As", "Bite-Sized", "Mythological", "Mr.", "Mrs.", "Wizard", "Private", "Schwifty", "Sexist", "Curious", "Countess", "Count", "DJ", "Suspicious", "Nearly-Dead", "The Original", "The One and Only", "Balding", "The Chosen One,", "Princess", "Prince", "Brother", "Sister"]
 
 class PocketGrover:NSObject {
     var name: String?
