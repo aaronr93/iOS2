@@ -44,7 +44,7 @@ class TwitterClient{
     func findUser(query:String) -> String{
         var retUser = "officialjaden"//default user in case nothing is found
         let statusesShowEndpoint = "https://api.twitter.com/1.1/users/search.json"
-        let params = ["q": query, "count":"1"]
+        let params = ["q": query, "count":"10"]
         var clientError : NSError?
         
         let request = client.URLRequestWithMethod("GET", URL: statusesShowEndpoint, parameters: params, error: &clientError)
@@ -53,11 +53,11 @@ class TwitterClient{
             do{
                 if (connectionError == nil) {
                     let json : AnyObject? = try NSJSONSerialization.JSONObjectWithData(data!, options: NSJSONReadingOptions.AllowFragments)
-                    for user  in (json as! [AnyObject]){
-                        let screen_name = user["screen_name"]!!
-                        print(screen_name)
-                        retUser = screen_name as! String
-                    }
+                    let users = json as! [AnyObject]
+                    let randNum = Int(arc4random_uniform(UInt32(users.count)))
+                    let screen_name = users[randNum]["screen_name"]!!
+                    print(screen_name)
+                    retUser = screen_name as! String
                 }
                 else {
                     print("Error: \(connectionError)")
