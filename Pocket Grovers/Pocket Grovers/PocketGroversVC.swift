@@ -54,7 +54,12 @@ class PocketGroversVC: UIViewController, UIPickerViewDataSource, UIPickerViewDel
     @IBOutlet weak var attackPicker : UIPickerView!
     @IBOutlet weak var attackButton: UIButton!
     
+    @IBOutlet weak var playerPlatform: UIImageView!
+    @IBOutlet weak var enemyPlatform: UIImageView!
 
+    @IBOutlet weak var awayView: UIView!
+    @IBOutlet weak var homeView: UIView!
+    
     var player1Student:StudentDirectoryItem!
     var player2Student:StudentDirectoryItem!
     var grover1:PocketGrover!
@@ -70,7 +75,7 @@ class PocketGroversVC: UIViewController, UIPickerViewDataSource, UIPickerViewDel
         super.viewDidLoad()
         
         //fonts
-        console.font = UIFont(name: "PokemonGB", size: 16)
+        console.font = UIFont(name: "PokemonGB", size: 24)
         homeName.font = UIFont(name: "PokemonGB", size: 20)
         awayName.font = UIFont(name: "PokemonGB", size: 20)
         attackButton.titleLabel?.font = UIFont(name: "Pokemon GB", size: 20)
@@ -95,8 +100,81 @@ class PocketGroversVC: UIViewController, UIPickerViewDataSource, UIPickerViewDel
         attackPicker.delegate = self
         attackPicker.selectRow(0, inComponent: 0, animated: false)
         
+        let img = UIImage(named: "background.jpg")
+        let backImg = UIImageView(frame: self.view.bounds)
+        backImg.image = img
+        backImg.alpha = 0.75
+        self.view.addSubview(backImg)
+        self.view.sendSubviewToBack(backImg)
         
         
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        roundCornersOfHome(homeImage.image!)
+        roundCornersOfAway(awayImage.image!)
+    }
+    
+    func roundCornersOfHome(img: UIImage) {
+        let borderWidth: CGFloat = 0.0
+        let imagePicked = img
+        
+        UIGraphicsBeginImageContextWithOptions(homeImage.frame.size, false, 0)
+        
+        let path = UIBezierPath(roundedRect: CGRectInset(homeImage.bounds, borderWidth / 2, borderWidth / 2), cornerRadius: 90.0)
+        let context = UIGraphicsGetCurrentContext()
+        
+        CGContextSaveGState(context)
+        // Clip the drawing area to the path
+        path.addClip()
+        
+        // Draw the image into the context
+        imagePicked.drawInRect(homeImage.bounds)
+        CGContextRestoreGState(context)
+        
+        // Configure the stroke
+        UIColor.purpleColor().setStroke()
+        path.lineWidth = borderWidth
+        
+        // Stroke the border
+        path.stroke()
+        
+        let roundedImage = UIGraphicsGetImageFromCurrentImageContext()
+        
+        UIGraphicsEndImageContext()
+        
+        homeImage.image = roundedImage
+    }
+    
+    func roundCornersOfAway(img: UIImage) {
+        let borderWidth: CGFloat = 0.0
+        let imagePicked = img
+        
+        UIGraphicsBeginImageContextWithOptions(awayImage.frame.size, false, 0)
+        
+        let path = UIBezierPath(roundedRect: CGRectInset(awayImage.bounds, borderWidth / 2, borderWidth / 2), cornerRadius: 90.0)
+        let context = UIGraphicsGetCurrentContext()
+        
+        CGContextSaveGState(context)
+        // Clip the drawing area to the path
+        path.addClip()
+        
+        // Draw the image into the context
+        imagePicked.drawInRect(awayImage.bounds)
+        CGContextRestoreGState(context)
+        
+        // Configure the stroke
+        UIColor.purpleColor().setStroke()
+        path.lineWidth = borderWidth
+        
+        // Stroke the border
+        path.stroke()
+        
+        let roundedImage = UIGraphicsGetImageFromCurrentImageContext()
+        
+        UIGraphicsEndImageContext()
+        
+        awayImage.image = roundedImage
     }
 
     override func didReceiveMemoryWarning() {
