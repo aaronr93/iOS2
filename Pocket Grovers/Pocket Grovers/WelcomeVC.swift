@@ -55,6 +55,7 @@ class WelcomeVC: UIViewController {
         }
         
         
+        
     }
 
     override func didReceiveMemoryWarning() {

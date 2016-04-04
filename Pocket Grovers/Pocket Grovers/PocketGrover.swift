@@ -36,7 +36,7 @@ class PocketGrover:NSObject {
         self.glanceInfo = glanceInfo
         //search twitter using first and last name
         tweets = UserTweets()
-        TwitterClient.sharedInstance.tweetsFromQuery("\(glanceInfo.name!.componentsSeparatedByString(" ")[0]) \(glanceInfo.name!.componentsSeparatedByString(" ")[2])", userTweets: tweets!)
+        TwitterClient.sharedInstance.tweetsFromQuery("\(glanceInfo.name!.componentsSeparatedByString(" ")[0]) \(glanceInfo.name!.componentsSeparatedByString(" ")[2])", userTweets: &tweets!)
     }
     
     init(glanceInfo:StudentDirectoryItem, tweets:UserTweets){
