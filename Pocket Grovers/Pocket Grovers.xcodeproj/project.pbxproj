@@ -17,7 +17,6 @@
 		3661ED1D1CB31C990061BF1C /* playerbackground.png in Resources */ = {isa = PBXBuildFile; fileRef = 3661ED1C1CB31C990061BF1C /* playerbackground.png */; };
 		3661ED1F1CB31CA50061BF1C /* consolebackground.png in Resources */ = {isa = PBXBuildFile; fileRef = 3661ED1E1CB31CA50061BF1C /* consolebackground.png */; };
 		3661ED211CB324E70061BF1C /* background.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 3661ED201CB324E70061BF1C /* background.jpg */; };
-		3661ED231CB326A00061BF1C /* background2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 3661ED221CB326A00061BF1C /* background2.jpg */; };
 		3661ED251CB329290061BF1C /* playerbackground2.png in Resources */ = {isa = PBXBuildFile; fileRef = 3661ED241CB329290061BF1C /* playerbackground2.png */; };
 		3661ED271CB32BCF0061BF1C /* pokemon.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 3661ED261CB32BCF0061BF1C /* pokemon.mp3 */; };
 		36B92BA51C9F331000E29A3B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36B92BA41C9F331000E29A3B /* AppDelegate.swift */; };
@@ -46,7 +45,6 @@
 		3661ED1C1CB31C990061BF1C /* playerbackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = playerbackground.png; sourceTree = "<group>"; };
 		3661ED1E1CB31CA50061BF1C /* consolebackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = consolebackground.png; sourceTree = "<group>"; };
 		3661ED201CB324E70061BF1C /* background.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = background.jpg; sourceTree = "<group>"; };
-		3661ED221CB326A00061BF1C /* background2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = background2.jpg; sourceTree = "<group>"; };
 		3661ED241CB329290061BF1C /* playerbackground2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = playerbackground2.png; sourceTree = "<group>"; };
 		3661ED261CB32BCF0061BF1C /* pokemon.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = pokemon.mp3; sourceTree = "<group>"; };
 		36B92BA11C9F331000E29A3B /* Pocket Grovers.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Pocket Grovers.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -121,7 +119,6 @@
 				3661ED241CB329290061BF1C /* playerbackground2.png */,
 				3661ED1E1CB31CA50061BF1C /* consolebackground.png */,
 				3661ED201CB324E70061BF1C /* background.jpg */,
-				3661ED221CB326A00061BF1C /* background2.jpg */,
 			);
 			name = Images;
 			sourceTree = "<group>";
@@ -223,7 +220,6 @@
 			files = (
 				3661ED211CB324E70061BF1C /* background.jpg in Resources */,
 				9B7AD0E01CAC9AE200BF036F /* Pokemon GB.ttf in Resources */,
-				3661ED231CB326A00061BF1C /* background2.jpg in Resources */,
 				36B92BAF1C9F331000E29A3B /* LaunchScreen.storyboard in Resources */,
 				36B92BAC1C9F331000E29A3B /* Assets.xcassets in Resources */,
 				3661ED1F1CB31CA50061BF1C /* consolebackground.png in Resources */,
