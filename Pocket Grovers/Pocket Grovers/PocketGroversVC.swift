@@ -82,7 +82,12 @@ class PocketGroversVC: UIViewController, UIPickerViewDataSource, UIPickerViewDel
     @IBOutlet weak var attackPicker : UIPickerView!
     @IBOutlet weak var attackButton: UIButton!
     
+    @IBOutlet weak var playerPlatform: UIImageView!
+    @IBOutlet weak var enemyPlatform: UIImageView!
 
+    @IBOutlet weak var awayView: UIView!
+    @IBOutlet weak var homeView: UIView!
+    
     var player1Student:StudentDirectoryItem!
     var player2Student:StudentDirectoryItem!
     var grover1:PocketGrover!
@@ -99,7 +104,7 @@ class PocketGroversVC: UIViewController, UIPickerViewDataSource, UIPickerViewDel
         super.viewDidLoad()
         
         //fonts
-        console.font = UIFont(name: "PokemonGB", size: 16)
+        console.font = UIFont(name: "PokemonGB", size: 24)
         homeName.font = UIFont(name: "PokemonGB", size: 20)
         awayName.font = UIFont(name: "PokemonGB", size: 20)
         attackButton.titleLabel?.font = UIFont(name: "Pokemon GB", size: 20)
@@ -132,7 +137,9 @@ class PocketGroversVC: UIViewController, UIPickerViewDataSource, UIPickerViewDel
         })
         
         
+        UIGraphicsEndImageContext()
         
+        awayImage.image = roundedImage
     }
 
     override func didReceiveMemoryWarning() {
