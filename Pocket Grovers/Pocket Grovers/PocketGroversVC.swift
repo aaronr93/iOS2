@@ -344,7 +344,7 @@ class PocketGroversVC: UIViewController, UIPickerViewDataSource, UIPickerViewDel
                 grover1.loseHealth(randNum)
             }
             console.textColor = awayName.textColor
-            console.text = "\(grover2.name!) used \((grover2.tweets?.tweets[attacknum].keywords[0])!)!\n\n It \(effectiveness)\n\n Now \(grover1.name!) has \(grover1.health) health."
+            console.text = "\(grover2.name!) used \((grover2.tweets?.tweets[attacknum].keywords[0])!)!\n\n It \(effectiveness)\n\n Now \(grover1.name!) has \(grover1.health) health.\n\n"
             if(grover1.health < 0){
                 console.text = console.text! + "\(grover1.name!) is dead."
                 ableToAttack = false
