@@ -12,6 +12,7 @@ import Foundation
 
 class UserTweets: NSObject {
     var tweets = [Tweet]()
+    dynamic var hasTweets = false
     var username: String!
     
     

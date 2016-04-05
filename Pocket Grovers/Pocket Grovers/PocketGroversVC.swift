@@ -29,9 +29,9 @@ class PocketGroversVC: UIViewController, UIPickerViewDataSource, UIPickerViewDel
             target.addObserver(self, forKeyPath: "health", options: .New, context: nil)
         }
         
+        
         override func observeValueForKeyPath(keyPath: String?, ofObject object: AnyObject?, change: [String : AnyObject]?, context: UnsafeMutablePointer<Void>) {
             if(target.health > 0){
-                infoLabel.text = ("\(target.name!) lost health! Health is now \(change![NSKeyValueChangeNewKey]!).")
                 let blurView = UIView(frame: image.bounds)
                 blurView.backgroundColor = UIColor(colorLiteralRed: 1.0, green: 0.5, blue: 0.5, alpha: 0.2)
                 image.addSubview(blurView)
@@ -42,6 +42,34 @@ class PocketGroversVC: UIViewController, UIPickerViewDataSource, UIPickerViewDel
         
         deinit{
             target.removeObserver(self, forKeyPath: "health")
+        }
+        
+    }
+    
+    class AttackPopulater:NSObject{
+        var target:PocketGrover!
+        var updateData:(([String])->())!
+        
+        func watch(target:PocketGrover, updateData:([String])->()){
+            self.target = target
+            self.updateData = updateData
+            target.addObserver(self, forKeyPath: "hasTweets", options: .New, context: nil)
+        }
+        
+        
+        override func observeValueForKeyPath(keyPath: String?, ofObject object: AnyObject?, change: [String : AnyObject]?, context: UnsafeMutablePointer<Void>) {
+            print("populating attacks")
+            var data = ["Select an Attack","1", "2", "3", "4"]
+            for i in 1..<data.count{
+                let randNum = Int(arc4random_uniform(UInt32((target.tweets?.tweets.count)!)))
+                data[i] = (target.tweets?.tweets[randNum].keywords[0])!
+            }
+            updateData(data)
+            
+        }
+        
+        deinit{
+            target.removeObserver(self, forKeyPath: "hasTweets")
         }
         
     }
@@ -62,6 +90,7 @@ class PocketGroversVC: UIViewController, UIPickerViewDataSource, UIPickerViewDel
     let queue = NSOperationQueue()
     let observer1 = GroverObserver()
     let observer2 = GroverObserver()
+    let attackPopulater = AttackPopulater()
     var selectedAttack = 0
     var attackData = ["Select an Attack", "Attack 1", "Attack 2", "Defense 1", "Defense 2"]
     
@@ -90,10 +119,17 @@ class PocketGroversVC: UIViewController, UIPickerViewDataSource, UIPickerViewDel
         observer1.watch(grover1, image: homeImage, infoLabel: console)
         observer2.watch(grover2, image: awayImage, infoLabel: console)
         
+        
         //set up the attack picker
         attackPicker.dataSource = self
         attackPicker.delegate = self
         attackPicker.selectRow(0, inComponent: 0, animated: false)
+        
+        //watch for attack data
+        attackPopulater.watch(grover1, updateData:{data in
+            self.attackData = data
+            self.attackPicker.reloadAllComponents()
+        })
         
         
         
@@ -159,6 +195,7 @@ class PocketGroversVC: UIViewController, UIPickerViewDataSource, UIPickerViewDel
     @IBAction func attack(){
         if(selectedAttack != 0){
             grover2.loseHealth(1)
+            console.text = "\(grover1.name!) used \(attackData[attackPicker.selectedRowInComponent(0)])! Now \(grover2.name!) has \(grover2.health) health."
         } else {
             console.text = "Please select an attack."
         }
