@@ -35,8 +35,6 @@ class PocketGroversVC: UIViewController, UIPickerViewDataSource, UIPickerViewDel
                 let blurView = UIView(frame: image.bounds)
                 blurView.backgroundColor = UIColor(colorLiteralRed: 1.0, green: 0.5, blue: 0.5, alpha: 0.2)
                 image.addSubview(blurView)
-            } else{
-                infoLabel.text = ("\(target.name!) is dead.")
             }
         }
         
@@ -59,10 +57,10 @@ class PocketGroversVC: UIViewController, UIPickerViewDataSource, UIPickerViewDel
         
         override func observeValueForKeyPath(keyPath: String?, ofObject object: AnyObject?, change: [String : AnyObject]?, context: UnsafeMutablePointer<Void>) {
             print("populating attacks")
-            var data = ["Select an Attack","1", "2", "3", "4"]
-            for i in 1..<data.count{
+            var data = ["Select an Attack"]
+            for _ in 0..<10{
                 let randNum = Int(arc4random_uniform(UInt32((target.tweets?.tweets.count)!)))
-                data[i] = (target.tweets?.tweets[randNum].keywords[0])!
+                data.append((target.tweets?.tweets[randNum].keywords[0])!)
             }
             updateData(data)
             
@@ -81,6 +79,7 @@ class PocketGroversVC: UIViewController, UIPickerViewDataSource, UIPickerViewDel
     @IBOutlet weak var awayImage: UIImageView!
     @IBOutlet weak var attackPicker : UIPickerView!
     @IBOutlet weak var attackButton: UIButton!
+    @IBOutlet weak var backButton: UIButton!
     
     @IBOutlet weak var playerPlatform: UIImageView!
     @IBOutlet weak var enemyPlatform: UIImageView!
@@ -97,17 +96,19 @@ class PocketGroversVC: UIViewController, UIPickerViewDataSource, UIPickerViewDel
     let observer2 = GroverObserver()
     let attackPopulater = AttackPopulater()
     var selectedAttack = 0
-    var attackData = ["Select an Attack", "Attack 1", "Attack 2", "Defense 1", "Defense 2"]
+    var attackData = ["Select an Attack"]
+    var ableToAttack = true
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         //fonts
-        console.font = UIFont(name: "PokemonGB", size: 24)
+        console.font = UIFont(name: "PokemonGB", size: 20)
         homeName.font = UIFont(name: "PokemonGB", size: 20)
         awayName.font = UIFont(name: "PokemonGB", size: 20)
         attackButton.titleLabel?.font = UIFont(name: "Pokemon GB", size: 20)
+        backButton.titleLabel?.font = UIFont(name: "Pokemon GB", size: 20)
         
         //download images in the background
         getImages()
@@ -272,11 +273,90 @@ class PocketGroversVC: UIViewController, UIPickerViewDataSource, UIPickerViewDel
     }
     
     @IBAction func attack(){
-        if(selectedAttack != 0){
-            grover2.loseHealth(1)
-            console.text = "\(grover1.name!) used \(attackData[attackPicker.selectedRowInComponent(0)])! Now \(grover2.name!) has \(grover2.health) health."
+        if(selectedAttack != 0 && grover2.health > 0 && ableToAttack){
+            let randNum = Int(arc4random_uniform(UInt32((5))))
+            var effectiveness:String = ""
+            switch randNum{
+            case 0:
+                effectiveness = "missed entirely!"
+            case 1:
+                effectiveness = "wasn't very effective..."
+            case 2:
+                effectiveness = "was somewhat effective."
+            case 3:
+                effectiveness = "was effective!"
+            case 4:
+                effectiveness = "was very effective!"
+            case 5:
+                effectiveness = "was super effective!"
+            case _:
+                effectiveness = "was impossibly effective"
+            }
+            if(randNum != 0){
+                grover2.loseHealth(randNum)
+            }
+            console.textColor = homeName.textColor
+            console.text = "\(grover1.name!) used \(attackData[attackPicker.selectedRowInComponent(0)])!\n\n It \(effectiveness)\n\n Now \(grover2.name!) has \(grover2.health) health. \n\n"
+            if(grover2.health > 0){
+                console.text = console.text! + "\(grover2.name!) is taking a turn..."
+                ableToAttack = false
+                let delay = 7 * Double(NSEC_PER_SEC)
+                let time = dispatch_time(DISPATCH_TIME_NOW, Int64(delay))
+                dispatch_after(time, dispatch_get_main_queue()) {
+                    self.enemyAttack()
+                    self.ableToAttack = true
+                }
+            } else {
+                console.text = console.text! + "\(grover2.name!) is dead."
+            }
         } else {
-            console.text = "Please select an attack."
+            if(grover2.health > 0){
+                console.textColor = homeName.textColor
+                console.text = "Please select an attack."
+            } else {
+                console.text = "\(grover2.name!) is dead."
+            }
+        }
+    }
+    
+    func enemyAttack(){
+        if(selectedAttack != 0 && grover1.health > 0){
+            let randNum = Int(arc4random_uniform(UInt32((5))))
+            var effectiveness:String = ""
+            switch randNum{
+            case 0:
+                effectiveness = "missed entirely!"
+            case 1:
+                effectiveness = "was not very effective..."
+            case 2:
+                effectiveness = "was somewhat effective."
+            case 3:
+                effectiveness = "was effective!"
+            case 4:
+                effectiveness = "was very effective!"
+            case 5:
+                effectiveness = "was super effective!"
+            case _:
+                effectiveness = "was impossibly effective"
+            }
+            let attacknum = Int(arc4random_uniform(UInt32((grover2.tweets?.tweets.count)!)))
+            if(randNum != 0){
+                grover1.loseHealth(randNum)
+            }
+            console.textColor = awayName.textColor
+            console.text = "\(grover2.name!) used \((grover2.tweets?.tweets[attacknum].keywords[0])!)!\n\n It \(effectiveness)\n\n Now \(grover1.name!) has \(grover1.health) health."
+            if(grover1.health < 0){
+                console.text = console.text! + "\(grover1.name!) is dead."
+                ableToAttack = false
+            }
+            
+        } else {
+            if(grover1.health > 0){
+                console.textColor = awayName.textColor
+                console.text = "Please select an attack."
+            } else {
+                console.text = "\(grover2.name!) is dead."
+            }
         }
     }
     

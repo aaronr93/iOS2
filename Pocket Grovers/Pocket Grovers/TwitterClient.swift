@@ -37,7 +37,6 @@ class TwitterClient{
                     }
                     
                     if(tweets.count < 4){
-                        print("not enough tweets... getting trends")
                         self.getTrending({t in
                             completionHandler(tweets: t)
                         })
@@ -83,9 +82,15 @@ class TwitterClient{
                 }
                 else {
                     print("Error: \(connectionError)")
+                    self.getTrending({t in
+                        completionHandler(tweets: t)
+                    })
                 }
             } catch{
                 print("Something bad happened")
+                self.getTrending({t in
+                    completionHandler(tweets: t)
+                })
             }
         }
         
@@ -166,7 +171,7 @@ class TwitterClient{
     }
     
     func getTrending(completionHandler:(tweets:[Tweet])->()){
-        //make sure there's nothing in the usertweets object
+        print("couldn't find tweets.. getting US trends instead")
         var tweets = [Tweet]()
         //finds trending topics in the us
         let statusesShowEndpoint = "https://api.twitter.com/1.1/trends/place.json"

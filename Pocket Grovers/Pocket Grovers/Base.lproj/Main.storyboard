@@ -167,14 +167,14 @@
                             <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Zol-qz-o62">
                                 <rect key="frame" x="306" y="491" width="294" height="109"/>
                             </pickerView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ESl-wn-Sma">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="wordWrap" numberOfLines="10" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ESl-wn-Sma">
                                 <rect key="frame" x="0.0" y="491" width="298" height="109"/>
                                 <attributedString key="attributedText">
                                     <fragment content="A wild Naf appeared!">
                                         <attributes>
                                             <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <font key="NSFont" size="24" name=".AppleSystemUIFont"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" lineSpacing="2" headIndent="1"/>
                                         </attributes>
                                     </fragment>
                                 </attributedString>
@@ -210,6 +210,13 @@
                                 </attributedString>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MMh-CS-qkY">
+                                <rect key="frame" x="20" y="20" width="106" height="48"/>
+                                <state key="normal" title="Back"/>
+                                <connections>
+                                    <segue destination="YIt-Hb-5x6" kind="unwind" unwindAction="back:" id="FNm-3H-4Su"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
@@ -260,14 +267,18 @@
                         <outlet property="attackPicker" destination="Zol-qz-o62" id="C8c-du-tSq"/>
                         <outlet property="awayImage" destination="JEZ-10-A7H" id="vCw-l8-YJI"/>
                         <outlet property="awayName" destination="jYP-YV-4yI" id="NWE-aV-KUq"/>
+                        <outlet property="awayView" destination="JEZ-10-A7H" id="UAX-X6-fd0"/>
+                        <outlet property="backButton" destination="MMh-CS-qkY" id="KHQ-mR-WKa"/>
                         <outlet property="console" destination="ESl-wn-Sma" id="GKy-oW-M0h"/>
                         <outlet property="enemyPlatform" destination="Ewa-wQ-Dxr" id="VFw-8E-jhO"/>
                         <outlet property="homeImage" destination="CkH-dQ-TGP" id="0DR-2g-Y8X"/>
                         <outlet property="homeName" destination="EQs-H1-sdP" id="afw-OI-JL3"/>
+                        <outlet property="homeView" destination="CkH-dQ-TGP" id="Fjh-Kq-gQB"/>
                         <outlet property="playerPlatform" destination="PAX-VG-2Lu" id="QM9-La-DdZ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yPl-D1-YcJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="YIt-Hb-5x6" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="341" y="403"/>
         </scene>

@@ -14,6 +14,10 @@ class WelcomeVC: UIViewController {
     @IBOutlet weak var player1TextField : UITextField!
     @IBOutlet weak var player2TextField : UITextField!
     
+    @IBAction func back(segue:UIStoryboardSegue){
+        
+    }
+    
     let directory = DirectoryInformation()
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
