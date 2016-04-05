@@ -136,6 +136,78 @@ class PocketGroversVC: UIViewController, UIPickerViewDataSource, UIPickerViewDel
             self.attackPicker.reloadAllComponents()
         })
         
+        let img = UIImage(named: "background.jpg")
+        let backImg = UIImageView(frame: self.view.bounds)
+        backImg.image = img
+        backImg.alpha = 0.75
+        self.view.addSubview(backImg)
+        self.view.sendSubviewToBack(backImg)
+        
+        
+        
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        roundCornersOfHome(homeImage.image!)
+        roundCornersOfAway(awayImage.image!)
+    }
+    
+    func roundCornersOfHome(img: UIImage) {
+        let borderWidth: CGFloat = 0.0
+        let imagePicked = img
+        
+        UIGraphicsBeginImageContextWithOptions(homeImage.frame.size, false, 0)
+        
+        let path = UIBezierPath(roundedRect: CGRectInset(homeImage.bounds, borderWidth / 2, borderWidth / 2), cornerRadius: 90.0)
+        let context = UIGraphicsGetCurrentContext()
+        
+        CGContextSaveGState(context)
+        // Clip the drawing area to the path
+        path.addClip()
+        
+        // Draw the image into the context
+        imagePicked.drawInRect(homeImage.bounds)
+        CGContextRestoreGState(context)
+        
+        // Configure the stroke
+        UIColor.purpleColor().setStroke()
+        path.lineWidth = borderWidth
+        
+        // Stroke the border
+        path.stroke()
+        
+        let roundedImage = UIGraphicsGetImageFromCurrentImageContext()
+        
+        UIGraphicsEndImageContext()
+        
+        homeImage.image = roundedImage
+    }
+    
+    func roundCornersOfAway(img: UIImage) {
+        let borderWidth: CGFloat = 0.0
+        let imagePicked = img
+        
+        UIGraphicsBeginImageContextWithOptions(awayImage.frame.size, false, 0)
+        
+        let path = UIBezierPath(roundedRect: CGRectInset(awayImage.bounds, borderWidth / 2, borderWidth / 2), cornerRadius: 90.0)
+        let context = UIGraphicsGetCurrentContext()
+        
+        CGContextSaveGState(context)
+        // Clip the drawing area to the path
+        path.addClip()
+        
+        // Draw the image into the context
+        imagePicked.drawInRect(awayImage.bounds)
+        CGContextRestoreGState(context)
+        
+        // Configure the stroke
+        UIColor.purpleColor().setStroke()
+        path.lineWidth = borderWidth
+        
+        // Stroke the border
+        path.stroke()
+        
+        let roundedImage = UIGraphicsGetImageFromCurrentImageContext()
         
         UIGraphicsEndImageContext()
         
